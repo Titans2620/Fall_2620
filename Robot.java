@@ -25,22 +25,16 @@ import edu.wpi.first.wpilibj.CameraServer;
 
 public class Robot extends TimedRobot {
 
-
-
-  WPI_TalonSRX rightDrive = new WPI_TalonSRX(0);
-  
-  WPI_TalonSRX leftDrive = new WPI_TalonSRX(1);
-
-
-
-
-
-
+for(int i = 0; i < size; i++){
+  WPI_TalonSRX[i] = new WPI_TalonSRX(i);
+}
+/*
+0 - Left Drive Motor
+1 - Right Drive Motor
+2 - extra
+3 - extra
+*/
   DifferentialDrive diffDrive = new DifferentialDrive(leftDrive, rightDrive);
-
-
-
-
 
 	public Robot(){
 		CameraServer.getInstance().startAutomaticCapture();
@@ -102,10 +96,6 @@ public class Robot extends TimedRobot {
 		int rPOV = right.getPOV();  // Top Directional Thumb on joystick
 		
 	}
-
-	//pen15
-	
-
 	public void testPeriodic() {
 	
 		}
